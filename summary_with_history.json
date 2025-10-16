@@ -1,0 +1,52 @@
+{
+  "stations": [
+    {
+      "id": "B10",
+      "name": "B10",
+      "last_accumulated": 0,
+      "new_issues": 5,
+      "resolved": 0,
+      "details": "B10 本次新增 5 筆，已修正 0 筆",
+      "history": [
+        {
+          "date": "2025-10-17",
+          "accumulated": 0,
+          "new_issues": 5,
+          "resolved": 0
+        }
+      ]
+    },
+    {
+      "id": "B11",
+      "name": "B11",
+      "last_accumulated": 0,
+      "new_issues": 9,
+      "resolved": 0,
+      "details": "B11 本次新增 9 筆，已修正 0 筆",
+      "history": [
+        {
+          "date": "2025-10-17",
+          "accumulated": 0,
+          "new_issues": 9,
+          "resolved": 0
+        }
+      ]
+    },
+    {
+      "id": "B13",
+      "name": "B13",
+      "last_accumulated": 0,
+      "new_issues": 13,
+      "resolved": 0,
+      "details": "B13 本次新增 13 筆，已修正 0 筆",
+      "history": [
+        {
+          "date": "2025-10-17",
+          "accumulated": 0,
+          "new_issues": 13,
+          "resolved": 0
+        }
+      ]
+    }
+  ]
+}
