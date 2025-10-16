@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>臺中捷運藍線 BD02 標 BIM 議題總覽</title>
+  <!-- 依舊需要這兩個 script -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    canvas { max-width: 900px; margin: auto; display: block; }
+    h1 { text-align: center; margin-bottom: 40px; }
+  </style>
+</head>
+<body>
+  <h1>臺中捷運藍線 BD02 標 BIM 議題統計</h1>
+  <canvas id="overviewChart" width="1200" height="600"></canvas>
+
+  <script>
+    // 註冊 Datalabels 外掛
+    Chart.register(ChartDataLabels);
+
+    fetch('summary_with_history.json')
+      .then(response => response.json())
+      .then(data => {
+        const stations = data.stations.map(s => s.name);
+        const unresolved = data.stations.map(s => s.last_accumulated + s.new_issues - s.resolved);
+        const resolved = data.stations.map(s => s.resolved);
+
+        const ctx = document.getElementById('overviewChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: stations,
+            datasets: [
+              {
+                label: '未結案',
+                data: unresolved,
+                backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                stack: '議題'
+              },
+              {
+                label: '已結案',
+                data: resolved,
+                backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                stack: '議題'
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              // --- 修改後的 datalabels 設定 ---
+              datalabels: {
+                // 將標籤錨定在色塊的中心
+                anchor: 'center',
+                align: 'center',
+                color: 'white', 
+                font: {
+                  weight: 'bold'  
+                },
+                // 為了避免圖表雜亂，只顯示大於 0 的數值
+                formatter: (value) => {
+                    return value > 0 ? value : null; // 如果值為0，則不顯示
+                }
+              },
+              // --- 您原有的設定 (保留) ---
+              title: {
+                display: true,
+                text: '點選站別可查看各站詳細統計資料'
+              },
+              tooltip: {
+                mode: 'index',
+                intersect: false,
+                callbacks: {
+                  afterBody: function(context) {
+                    const index = context[0].dataIndex;
+                    const unresolvedVal = context[0].chart.data.datasets[0].data[index];
+                    const resolvedVal = context[0].chart.data.datasets[1].data[index];
+                    const total = unresolvedVal + resolvedVal;
+                    return '總數：' + total + ' 筆';
+                  }
+                }
+              }
+            },
+            onClick: (e, elements) => {
+              if (elements.length > 0) {
+                const index = elements[0].index;
+                const station = stations[index];
+                window.location.href = station + '.html';
+              }
+            },
+            interaction: {
+              mode: 'nearest',
+              axis: 'x',
+              intersect: false
+            },
+            scales: {
+              x: { stacked: true },
+              y: { 
+                stacked: true, 
+                beginAtZero: true, 
+                title: { display: true, text: '議題數' } 
+                // 由於標籤在內部，不再需要額外增加y軸頂部空間
+              }
+            }
+          }
+        });
+      })
+      .catch(err => console.error('載入 summary.json 失敗', err));
+  </script>
+</body>
+</html>
