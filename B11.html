@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>B11 議題詳細統計</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { text-align: center; }
+    .container { max-width: 1000px; margin: auto; }
+    canvas { margin-top: 30px; }
+    table { width: 100%; margin-top: 30px; border-collapse: collapse; }
+    th, td { padding: 8px; text-align: center; border: 1px solid #ccc; }
+    th { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>B11 議題詳細統計</h1>
+    <p id="summaryText"></p>
+    <canvas id="b03Chart" width="800" height="300"></canvas>
+
+    <h3>📋 歷史統計記錄</h3>
+    <table id="historyTable">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>上次累積</th>
+          <th>本次新增</th>
+          <th>已修正</th>
+          <th>未修正</th>
+          <th>累積總議題</th>
+          <th>修正率</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <p style="text-align: center;"><a href="index.html">← 返回總覽</a></p>
+  </div>
+
+  <script>
+    fetch('summary_with_history.json')
+      .then(res => res.json())
+      .then(data => {
+        const station = data.stations.find(s => s.id === 'B11');
+        if (!station) return;
+
+        const unresolved = station.last_accumulated + station.new_issues - station.resolved;
+        const total = unresolved + station.resolved;
+
+        document.getElementById('summaryText').textContent =
+          `上次累積：${station.last_accumulated} 筆，本次新增：${station.new_issues} 筆，` +
+          `已修正：${station.resolved} 筆，未修正：${unresolved} 筆，累積總議題：${total} 筆。`;
+
+        const ctx = document.getElementById('b03Chart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['上次累積', '本次新增', '已修正', '未修正'],
+            datasets: [{
+              label: '議題數',
+              data: [station.last_accumulated, station.new_issues, station.resolved, unresolved],
+              backgroundColor: [
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 205, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(255, 99, 132, 0.7)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            barPercentage: 0.5,
+            scales: {
+              y: { beginAtZero: true }
+            }
+          }
+        });
+
+        // 插入歷史資料表格
+        const tbody = document.querySelector("#historyTable tbody");
+        station.history.forEach(record => {
+          const unresolved = record.accumulated + record.new_issues - record.resolved;
+          const total = unresolved + record.resolved;
+          const resolvedrate =  (record.resolved / record.accumulated) * 100 ;
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${record.date}</td>
+            <td>${record.accumulated}</td>
+            <td>${record.new_issues}</td>
+            <td>${record.resolved}</td>
+            <td>${unresolved}</td>
+            <td>${total}</td>
+            <td>${resolvedrate}%</td>
+          `;
+          tbody.appendChild(row);
+        });
+      });
+  </script>
+</body>
+</html>
