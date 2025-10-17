@@ -20,14 +20,14 @@
       "id": "B11",
       "name": "B11",
       "last_accumulated": 0,
-      "new_issues": 9,
+      "new_issues": 10,
       "resolved": 0,
-      "details": "B11 本次新增 9 筆，已修正 0 筆",
+      "details": "B11 本次新增 10 筆，已修正 0 筆",
       "history": [
         {
           "date": "2025-10-17",
           "accumulated": 0,
-          "new_issues": 9,
+          "new_issues": 10,
           "resolved": 0
         }
       ]
