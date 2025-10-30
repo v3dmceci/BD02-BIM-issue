@@ -4,14 +4,14 @@
       "id": "B09",
       "name": "B09",
       "last_accumulated": 0,
-      "new_issues": 13,
+      "new_issues": 17,
       "resolved": 0,
-      "details": "B09 本次新增 13 筆，已修正 0 筆",
+      "details": "B09 本次新增 17 筆，已修正 0 筆",
       "history": [
         {
           "date": "2025-10-31",
           "accumulated": 0,
-          "new_issues": 13,
+          "new_issues": 17,
           "resolved": 0
         }
       ]
