@@ -36,13 +36,15 @@
               {
                 label: '未結案',
                 data: unresolved,
-                backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                //backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                backgroundColor: 'rgba(255, 26, 75,0.95)',
                 stack: '議題'
               },
               {
                 label: '已結案',
                 data: resolved,
-                backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                //backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                backgroundColor: 'rgba(75, 192, 192)',
                 stack: '議題'
               }
             ]
@@ -57,7 +59,8 @@
                 align: 'center',
                 color: 'white', 
                 font: {
-                  weight: 'bold'  
+                  weight: 'bold',
+                  size: '20px'  
                 },
                 // 為了避免圖表雜亂，只顯示大於 0 的數值
                 formatter: (value) => {
@@ -96,11 +99,20 @@
               intersect: false
             },
             scales: {
-              x: { stacked: true },
+              x: { stacked: true,
+                    ticks: {
+                              font:{size:18,
+                                    weight: 'bold'}
+                      }
+               },
               y: { 
                 stacked: true, 
-                beginAtZero: true, 
-                title: { display: true, text: '議題數' } 
+                beginAtZero: true,
+                ticks: {
+                        font:{size:18,
+                              weight: 'bold'}
+                        }, 
+                title: { display: true, text: '議題數',font:{size:18,weight: 'bold'} } 
                 // 由於標籤在內部，不再需要額外增加y軸頂部空間
               }
             }
