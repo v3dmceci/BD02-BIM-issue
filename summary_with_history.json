@@ -19,32 +19,44 @@
     {
       "id": "B10",
       "name": "B10",
-      "last_accumulated": 0,
-      "new_issues": 14,
-      "resolved": 0,
-      "details": "B10 本次新增 14 筆，已修正 0 筆",
+      "last_accumulated": 14,
+      "new_issues": 5,
+      "resolved": 7,
+      "details": "B10 本次新增 5 筆，已修正 7 筆",
       "history": [
         {
           "date": "2025-10-17",
           "accumulated": 0,
           "new_issues": 14,
           "resolved": 0
+        },
+        {
+          "date": "2025-11-21",
+          "accumulated": 14,
+          "new_issues": 5,
+          "resolved": 7
         }
       ]
     },
     {
       "id": "B11",
       "name": "B11",
-      "last_accumulated": 0,
+      "last_accumulated": 10,
       "new_issues": 10,
-      "resolved": 0,
-      "details": "B11 本次新增 10 筆，已修正 0 筆",
+      "resolved": 5,
+      "details": "B11 本次新增 10 筆，已修正 5 筆",
       "history": [
         {
           "date": "2025-10-17",
           "accumulated": 0,
           "new_issues": 10,
           "resolved": 0
+        },
+        {
+          "date": "2025-11-21",
+          "accumulated": 10,
+          "new_issues": 10,
+          "resolved": 5
         }
       ]
     },
@@ -67,16 +79,22 @@
     {
       "id": "B13",
       "name": "B13",
-      "last_accumulated": 0,
-      "new_issues": 13,
-      "resolved": 0,
-      "details": "B13 本次新增 13 筆，已修正 0 筆",
+      "last_accumulated": 13,
+      "new_issues": 4,
+      "resolved": 8,
+      "details": "B13 本次新增 4 筆，已修正 8 筆",
       "history": [
         {
           "date": "2025-10-17",
           "accumulated": 0,
           "new_issues": 13,
           "resolved": 0
+        },
+        {
+          "date": "2025-11-21",
+          "accumulated": 13,
+          "new_issues": 4,
+          "resolved": 8
         }
       ]
     },
