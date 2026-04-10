@@ -135,7 +135,7 @@
     {
       "id": "B12",
       "name": "B12",
-      "last_accumulated": 63,
+      "last_accumulated": 62,
       "new_issues": 27,
       "resolved": 41,
       "details": "B12 本次新增 27 筆，已修正 41 筆",
@@ -172,7 +172,7 @@
         },
         {
           "date": "2026-04-10",
-          "accumulated": 63,
+          "accumulated": 62,
           "new_issues": 27,
           "resolved": 41
         }
