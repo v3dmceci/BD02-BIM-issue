@@ -3,10 +3,10 @@
     {
       "id": "B09",
       "name": "B09",
-      "last_accumulated": 71,
-      "new_issues": 12,
-      "resolved": 34,
-      "details": "B09 本次新增 12 筆，已修正 34 筆",
+      "last_accumulated": 83,
+      "new_issues": 31,
+      "resolved": 44,
+      "details": "B09 本次新增 31 筆，已修正 44 筆",
       "history": [
         {
           "date": "2025-10-31",
@@ -43,6 +43,12 @@
           "accumulated": 71,
           "new_issues": 12,
           "resolved": 34
+        },
+        {
+          "date": "2026-05-22",
+          "accumulated": 83,
+          "new_issues": 31,
+          "resolved": 44
         }
       ]
     },
@@ -251,10 +257,10 @@
     {
       "id": "B14",
       "name": "B14",
-      "last_accumulated": 56,
-      "new_issues": 6,
-      "resolved": 33,
-      "details": "B14 本次新增 6 筆，已修正 33 筆",
+      "last_accumulated": 62,
+      "new_issues": 13,
+      "resolved": 36,
+      "details": "B14 本次新增 13 筆，已修正 36 筆",
       "history": [
         {
           "date": "2025-10-31",
@@ -291,6 +297,12 @@
           "accumulated": 56,
           "new_issues": 6,
           "resolved": 33
+        },
+        {
+          "date": "2026-05-22",
+          "accumulated": 62,
+          "new_issues": 13,
+          "resolved": 36
         }
       ]
     }
