@@ -3,10 +3,10 @@
     {
       "id": "B09",
       "name": "B09",
-      "last_accumulated": 161,
-      "new_issues": 13,
-      "resolved": 85,
-      "details": "B09 本次新增 13 筆，已修正 85 筆",
+      "last_accumulated": 174,
+      "new_issues": 16,
+      "resolved": 123,
+      "details": "B09 本次新增 16 筆，已修正 123 筆",
       "history": [
         {
           "date": "2025-10-31",
@@ -67,6 +67,12 @@
           "accumulated": 161,
           "new_issues": 13,
           "resolved": 85
+        },
+        {
+          "date": "2026-10-02",
+          "accumulated": 174,
+          "new_issues": 16,
+          "resolved": 123
         }
       ]
     },
