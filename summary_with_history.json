@@ -3,7 +3,7 @@
     {
       "id": "B09",
       "name": "B09",
-      "last_accumulated": 204,
+      "last_accumulated": 222,
       "new_issues": 14,
       "resolved": 157,
       "details": "B09 本次新增 14 筆，已修正 157 筆",
@@ -65,24 +65,24 @@
         {
           "date": "2026-09-18",
           "accumulated": 161,
-          "new_issues": 13,
+          "new_issues": 16,
           "resolved": 104
         },
         {
           "date": "2026-10-02",
-          "accumulated": 174,
+          "accumulated": 177,
           "new_issues": 16,
           "resolved": 123
         },
         {
           "date": "2026-10-27",
-          "accumulated": 190,
+          "accumulated": 193,
           "new_issues": 14,
           "resolved": 144
         },
         {
           "date": "2026-11-27",
-          "accumulated": 204,
+          "accumulated": 222,
           "new_issues": 14,
           "resolved": 157
         }
