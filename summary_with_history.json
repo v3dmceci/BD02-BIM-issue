@@ -5,8 +5,8 @@
       "name": "B09",
       "last_accumulated": 190,
       "new_issues": 14,
-      "resolved": 116,
-      "details": "B09 本次新增 14 筆，已修正 116 筆",
+      "resolved": 129,
+      "details": "B09 本次新增 14 筆，已修正 129 筆",
       "history": [
         {
           "date": "2025-10-31",
@@ -79,6 +79,12 @@
           "accumulated": 190,
           "new_issues": 14,
           "resolved": 116
+        },
+        {
+          "date": "2026-11-27",
+          "accumulated": 190,
+          "new_issues": 14,
+          "resolved": 129
         }
       ]
     },
