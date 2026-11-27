@@ -3,7 +3,7 @@
     {
       "id": "B09",
       "name": "B09",
-      "last_accumulated": 190,
+      "last_accumulated": 204,
       "new_issues": 14,
       "resolved": 129,
       "details": "B09 本次新增 14 筆，已修正 129 筆",
@@ -82,7 +82,7 @@
         },
         {
           "date": "2026-11-27",
-          "accumulated": 190,
+          "accumulated": 204,
           "new_issues": 14,
           "resolved": 129
         }
